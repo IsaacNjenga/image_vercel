@@ -14,9 +14,11 @@ app.use(cors( {
 app.use(express.json());
 app.use(express.static("public"));
 
-app.post('/', (req,res) => {
-    console.log("hello from backend"
-                }
+app.post('/', (req, res) => {
+    console.log("hello from backend");
+    res.send("Response from the backend");
+});
+
 
 mongoose.connect(
   "mongodb+srv://IsaacNjenga:cations!@cluster0.xf14h71.mongodb.net/employee?retryWrites=true&w=majority&appName=Cluster0"
