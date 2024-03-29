@@ -6,12 +6,16 @@ const path = require("path");
 const userModel = require("./models/users");
 
 const app = express();
-app.use(cors());
+app.use(cors( {
+    origin:["https://login-vercel-front.vercel.app"],
+    methods:["POST","GET"],
+    credentials: true
+  }));
 app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect(
-  "mongodb+srv://IsaacNjenga:cations!@cluster0.xf14h71.mongodb.net/employee"
+  "mongodb+srv://IsaacNjenga:cations!@cluster0.xf14h71.mongodb.net/employee?retryWrites=true&w=majority&appName=Cluster0"
 );
 
 const storage = multer.diskStorage({
