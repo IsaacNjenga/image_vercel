@@ -34,7 +34,7 @@ const upload = multer({
   storage: storage,
 });
 
-app.post("/", upload.single("file"), (req, res) => {
+app.post("/upload", upload.single("file"), (req, res) => {
   userModel
     .create({ image: req.file.filename })
     .then((createdUser) => {
