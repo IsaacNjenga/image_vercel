@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/getImage`)
+      .get(`https://image-vercel-api.vercel.app/getImage`)
       .then((res) => setImages(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -45,7 +45,7 @@ function App() {
               <td>{image._id}</td>
               <td>
                 <img
-                  src={`http://localhost:3001/Images/${image.image}`}
+                  src={`https://image-vercel-api.vercel.app/Images/${image.image}`}
                   style={{
                     width: "500px",
                     height: "330px",
