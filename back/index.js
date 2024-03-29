@@ -7,7 +7,7 @@ const userModel = require("./models/users");
 
 const app = express();
 app.use(cors( {
-    origin:["https://login-vercel-front.vercel.app"],
+    origin:["https://image-vercel-front.vercel.app"],
     methods:["POST","GET"],
     credentials: true
   }));
