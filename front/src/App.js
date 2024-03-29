@@ -6,7 +6,7 @@ function App() {
   const [file, setFile] = useState();
   const [images, setImages] = useState([]);
 
-  axios.default.Credentials = true
+  axios.defaults.withCredentials = true
   const handleUpload = () => {
     const formData = new FormData();
     formData.append("file", file);
