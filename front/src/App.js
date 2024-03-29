@@ -10,7 +10,7 @@ function App() {
     const formData = new FormData();
     formData.append("file", file);
     axios
-      .post(`https://image-vercel-api.vercel.app/upload`, formData)
+      .post(`https://image-vercel-api.vercel.app`, formData)
       .then((res) => {
         console.log(res);
         window.location.reload(true);
