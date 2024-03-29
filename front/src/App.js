@@ -45,7 +45,7 @@ function App() {
               <td>{image._id}</td>
               <td>
                 <img
-                  src={`https://image-vercel-api.vercel.app/Images/${image.image}`}
+                  src={`http://localhost:3001/Images/${image.image}`}
                   style={{
                     width: "500px",
                     height: "330px",
