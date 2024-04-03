@@ -13,9 +13,7 @@ function App() {
     axios
       .post(`https://image-vercel-alpha.vercel.app/upload`, formData)
       .then((res) => {
-        console.log(res);
-        window.location.reload(true);
-      })
+        console.log(res))
       .catch((err) => console.log(err));
   };
 
