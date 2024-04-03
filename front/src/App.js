@@ -11,7 +11,7 @@ function App() {
     const formData = new FormData();
     formData.append("file", file);
     axios
-      .post(`https://image-vercel-api.vercel.app/upload`, formData)
+      .post(`https://image-vercel-alpha.vercel.app/upload`, formData)
       .then((res) => {
         console.log(res);
         window.location.reload(true);
@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`https://image-vercel-api.vercel.app/getImage`)
+      .get(`https://image-vercel-alpha.vercel.app/getImage`)
       .then((res) => setImages(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -46,7 +46,7 @@ function App() {
               <td>{image._id}</td>
               <td>
                 <img
-                  src={`https://image-vercel-api.vercel.app/Images/${image.image}`}
+                  src={`https://image-vercel-alpha.vercel.app/Images/${image.image}`}
                   style={{
                     width: "500px",
                     height: "330px",
