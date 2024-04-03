@@ -4,6 +4,22 @@ const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
 const userModel = require("./models/users");
+const fs = require('fs');
+
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  const tempFilePath = req.file.path;
+  const fileName = req.file.originalname;
+  const filePath = `/tmp/${fileName}`; // Assuming files are stored in /tmp folder
+  
+  fs.rename(tempFilePath, filePath, (err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Failed to upload file" });
+    } else {
+      res.json({ success: true });
+    }
+  });
+});
 
 const app = express();
 app.use(cors( {
